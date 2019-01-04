@@ -4,92 +4,34 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: GroundExtents
-    100004: GroundTrack
-    100006: GroundVerges
-    100008: WallExtents
-    100010: GroundRunwayExtents
-    100012: GroundRunwayTrack
-    100014: GroundRunwayVerges
-    100016: GroundRunwayWall
-    100018: GroundRunway
-    100020: GroundRunwayAsphalt
-    100022: GroundRunwayLines
+    100002: GroundRunway
+    100004: GroundRunwayAsphalt
+    100006: GroundRunwayLines
     400000: //RootNode
-    400002: GroundExtents
-    400004: GroundTrack
-    400006: GroundVerges
-    400008: WallExtents
-    400010: GroundRunwayExtents
-    400012: GroundRunwayTrack
-    400014: GroundRunwayVerges
-    400016: GroundRunwayWall
-    400018: GroundRunway
-    400020: GroundRunwayAsphalt
-    400022: GroundRunwayLines
-    2300000: //RootNode
-    2300002: GroundExtents
-    2300004: GroundTrack
-    2300006: GroundVerges
-    2300008: WallExtents
-    2300010: GroundRunwayExtents
-    2300012: GroundRunwayTrack
-    2300014: GroundRunwayVerges
-    2300016: GroundRunwayWall
-    2300018: GroundRunway
-    2300020: GroundRunwayAsphalt
-    2300022: GroundRunwayLines
-    3300000: //RootNode
-    3300002: GroundExtents
-    3300004: GroundTrack
-    3300006: GroundVerges
-    3300008: WallExtents
-    3300010: GroundRunwayExtents
-    3300012: GroundRunwayTrack
-    3300014: GroundRunwayVerges
-    3300016: GroundRunwayWall
-    3300018: GroundRunway
-    3300020: GroundRunwayAsphalt
-    3300022: GroundRunwayLines
-    4300000: GroundTrack
-    4300002: WallExtents
-    4300004: GroundExtents
-    4300006: GroundVerges
-    4300008: GroundRunwayWall
-    4300010: GroundRunwayExtents
-    4300012: GroundRunwayTrack
-    4300014: GroundRunwayVerges
-    4300016: GroundRunwayAsphalt
-    4300018: GroundRunwayLines
-    4300020: GroundRunway
+    400002: GroundRunway
+    400004: GroundRunwayAsphalt
+    400006: GroundRunwayLines
+    2100000: NavyDarkGrid
+    2100002: WhiteSmooth
+    2100004: NavySmooth
+    2100006: NavyGrid
+    2300000: GroundRunway
+    2300002: GroundRunwayAsphalt
+    2300004: GroundRunwayLines
+    3300000: GroundRunway
+    3300002: GroundRunwayAsphalt
+    3300004: GroundRunwayLines
+    4300000: GroundRunwayAsphalt
+    4300002: GroundRunwayLines
+    4300004: GroundRunway
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NavyDarkGrid
-    second: {fileID: 2100000, guid: 01c04496878436140922b19f5220712b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NavyGrid
-    second: {fileID: 2100000, guid: 297e3a11e7d07fc48b4f71056b4f927f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NavySmooth
-    second: {fileID: 2100000, guid: bccdb449802ea144b8709da9bac60356, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WhiteSmooth
-    second: {fileID: 2100000, guid: 616853845a4a54949ac851f2f807aa2a, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
-    materialName: 1
-    materialSearch: 2
-    materialLocation: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -115,43 +57,37 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
-<<<<<<< HEAD
     useSRGBMaterialColor: 1
-=======
->>>>>>> 4aa68b1cf575df95d286ba59fb5db86d39b6709d
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
-    useFileUnits: 0
+    useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-<<<<<<< HEAD
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-=======
->>>>>>> 4aa68b1cf575df95d286ba59fb5db86d39b6709d
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -166,15 +102,11 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-<<<<<<< HEAD
-=======
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
->>>>>>> 4aa68b1cf575df95d286ba59fb5db86d39b6709d
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
