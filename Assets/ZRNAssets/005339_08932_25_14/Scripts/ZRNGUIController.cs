@@ -14,7 +14,6 @@ public class ZRNGUIController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		this.GetComponent<CameraController>().ChangeCamera(0);
 		this.GetComponent<AmbientController>().changeShadow(true);
 	}
 	
@@ -52,6 +51,8 @@ public class ZRNGUIController : MonoBehaviour {
 			{
 				this.GetComponent<AmbientController>().changeParticle(AmbientController.ParticleType.PARTICLE_NONE);
 			}
+
+            GUI.EndGroup();
 		}
 		else
 		{

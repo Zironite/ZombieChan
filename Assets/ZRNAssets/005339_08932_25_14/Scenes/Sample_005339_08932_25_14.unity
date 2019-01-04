@@ -4888,7 +4888,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
@@ -10733,6 +10733,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 105490, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 105472, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10746,10 +10750,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 105478, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 105490, guid: c925872ce3bfa384589bf34b953d5a65, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
