@@ -519,7 +519,10 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
+<<<<<<< HEAD
   webGLThreadsSupport: 0
+=======
+>>>>>>> 4aa68b1cf575df95d286ba59fb5db86d39b6709d
   scriptingDefineSymbols:
     1: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
