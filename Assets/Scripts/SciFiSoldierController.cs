@@ -20,12 +20,15 @@ public class SciFiSoldierController : MonoBehaviour
         float mouseMoveAmount = Input.GetAxis("Mouse X");
         
         if(Mathf.Abs(moveForwardAmount) > 0) {
+            GetComponent<Transform>().rotation = Quaternion.LookRotation(Camera.main.transform.forward,Vector3.up);
+            Camera.main.transform.RotateAround(GetComponent<Transform>().position, Vector3.up, 
+                Vector3.Angle(Camera.main.transform.forward,GetComponent<Transform>().forward));
             actions.Walk();
         } else {
             actions.Stay();
         }
         GetComponent<Transform>().position += Camera.main.transform.forward*moveForwardAmount*Time.fixedDeltaTime;
         GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,rotateAmount*Time.fixedDeltaTime*40);
-
+        Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,mouseMoveAmount*Time.fixedDeltaTime*40);
     }
 }
