@@ -5,11 +5,14 @@ using UnityEngine;
 public class SciFiSoldierController : MonoBehaviour
 {
     Actions actions;
+    Animator animator;
+    public float movementSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         actions = GetComponent<Actions>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,12 +29,19 @@ public class SciFiSoldierController : MonoBehaviour
                 Vector3.SignedAngle(Camera.main.transform.forward,
                     GetComponent<Transform>().forward,
                     Vector3.up));
-            actions.Walk();
+            if(Input.GetKeyDown(KeyCode.LeftShift)) {
+                actions.Run();
+            } else {
+                actions.Walk();
+            }
         } else {
             actions.Stay();
         }
-        GetComponent<Transform>().position += Camera.main.transform.forward*moveForwardAmount*Time.fixedDeltaTime;
-        GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,rotateAmount*Time.fixedDeltaTime*40);
-        Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,mouseMoveAmount*Time.fixedDeltaTime*40);
+        GetComponent<Transform>().position += Camera.main.transform.forward*moveForwardAmount*
+            animator.GetFloat("Speed")*Time.fixedDeltaTime;
+        GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
+            rotateAmount*Time.fixedDeltaTime*movementSpeed);
+        Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
+            mouseMoveAmount*Time.fixedDeltaTime*movementSpeed);
     }
 }
