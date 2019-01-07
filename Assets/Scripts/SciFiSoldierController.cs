@@ -21,8 +21,11 @@ public class SciFiSoldierController : MonoBehaviour
         
         if(Mathf.Abs(moveForwardAmount) > 0) {
             GetComponent<Transform>().rotation = Quaternion.LookRotation(Camera.main.transform.forward,Vector3.up);
+            
             Camera.main.transform.RotateAround(GetComponent<Transform>().position, Vector3.up, 
-                Vector3.Angle(Camera.main.transform.forward,GetComponent<Transform>().forward));
+                Vector3.SignedAngle(Camera.main.transform.forward,
+                    GetComponent<Transform>().forward,
+                    Vector3.up));
             actions.Walk();
         } else {
             actions.Stay();
