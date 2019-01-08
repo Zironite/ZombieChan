@@ -23,13 +23,14 @@ public class SciFiSoldierController : MonoBehaviour
         float mouseMoveAmount = Input.GetAxis("Mouse X");
         
         if(Mathf.Abs(moveForwardAmount) > 0) {
-            GetComponent<Transform>().rotation = Quaternion.LookRotation(Camera.main.transform.forward,Vector3.up);
+            GetComponent<Transform>().rotation = Quaternion.Lerp(GetComponent<Transform>().rotation,
+                Quaternion.LookRotation(Camera.main.transform.forward,Vector3.up),0.1f);
             
             Camera.main.transform.RotateAround(GetComponent<Transform>().position, Vector3.up, 
-                Vector3.SignedAngle(Camera.main.transform.forward,
+                Mathf.Lerp(0,Vector3.SignedAngle(Camera.main.transform.forward,
                     GetComponent<Transform>().forward,
-                    Vector3.up));
-            if(Input.GetKeyDown(KeyCode.LeftShift)) {
+                    Vector3.up),0.1f));
+            if(Input.GetKey(KeyCode.LeftShift)) {
                 actions.Run();
             } else {
                 actions.Walk();
@@ -37,11 +38,13 @@ public class SciFiSoldierController : MonoBehaviour
         } else {
             actions.Stay();
         }
-        GetComponent<Transform>().position += Camera.main.transform.forward*moveForwardAmount*
+        GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
             animator.GetFloat("Speed")*Time.fixedDeltaTime;
         GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
             rotateAmount*Time.fixedDeltaTime*movementSpeed);
-        Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
-            mouseMoveAmount*Time.fixedDeltaTime*movementSpeed);
+        if(moveForwardAmount == 0) {
+            Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
+                mouseMoveAmount*Time.fixedDeltaTime*movementSpeed);
+        }
     }
 }
