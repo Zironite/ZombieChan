@@ -53,9 +53,16 @@ public class SciFiSoldierController : MonoBehaviour
             rotateAmount*Time.fixedDeltaTime*movementSpeed);
         if(moveForwardAmount == 0) {
             Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
-                mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed);
+                Mathf.Clamp(mouseMoveAmountX,-5,5)*Time.fixedDeltaTime*movementSpeed);
+            var yAngle = mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed;
+            var maxAngle = 60;
+            var minAngle = 20;
+            var cameraDir = Camera.main.transform.position - GetComponent<Transform>().position;
+            var angleBetweenCameraAndFloor = Vector3.Angle(cameraDir,
+                new Vector3(cameraDir.x,0,cameraDir.z));
+            var newYAngle = Mathf.Clamp(angleBetweenCameraAndFloor+yAngle,minAngle,maxAngle)-angleBetweenCameraAndFloor;
             Camera.main.transform.RotateAround(GetComponent<Transform>().position, Camera.main.transform.right,
-                mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed);
+                newYAngle);
             Camera.main.transform.LookAt(GetComponent<Transform>().position + Vector3.up);
         }
     }
