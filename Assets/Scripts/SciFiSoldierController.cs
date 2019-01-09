@@ -47,6 +47,13 @@ public class SciFiSoldierController : MonoBehaviour
         } else {
             actions.Stay();
         }
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            actions.Jump();
+            GetComponent<Rigidbody>().AddForce(Vector3.up*3,ForceMode.Impulse);
+        }
+        if(Input.GetKeyDown(KeyCode.C)) {
+            actions.Sitting();
+        }
         GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
             animator.GetFloat("Speed")*Time.fixedDeltaTime;
         GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
