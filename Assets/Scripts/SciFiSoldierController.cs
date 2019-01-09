@@ -8,6 +8,7 @@ public class SciFiSoldierController : MonoBehaviour
     Animator animator;
     PlayerController playerController;
     Vector3 defaultCemeraPosition;
+    bool resettingCameraPosition;
 
     public float movementSpeed;
 
@@ -19,6 +20,7 @@ public class SciFiSoldierController : MonoBehaviour
         defaultCemeraPosition = new Vector3(0,1,-1);
         playerController = GetComponent<PlayerController>();
         playerController.SetArsenal("Rifle");
+        resettingCameraPosition = false;
     }
 
     // Update is called once per frame
@@ -71,11 +73,24 @@ public class SciFiSoldierController : MonoBehaviour
                 actions.Attack();
             }
         } else {
+            if (Input.GetMouseButtonUp(1)) {
+                resettingCameraPosition = true;
+            }
             GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
                 animator.GetFloat("Speed")*Time.fixedDeltaTime;
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
                 rotateAmount*Time.fixedDeltaTime*movementSpeed);
-            if(moveForwardAmount == 0) {
+            if(resettingCameraPosition) {
+                var newCameraPosition = GetComponent<Transform>().position + GetComponent<Transform>().rotation*defaultCemeraPosition;
+                var newCameraRotation = Quaternion.LookRotation(GetComponent<Transform>().forward,Vector3.up);
+                Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, newCameraPosition, 0.1f);
+                Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, newCameraRotation, 0.1f);
+
+                if((Camera.main.transform.position - newCameraPosition).magnitude <= 0.001f &&
+                    (Camera.main.transform.rotation.eulerAngles - newCameraRotation.eulerAngles).magnitude <= 0.001f) {
+                        resettingCameraPosition = false;
+                    }
+            } else if(moveForwardAmount == 0) {
                 Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
                     Mathf.Clamp(mouseMoveAmountX,-5,5)*Time.fixedDeltaTime*movementSpeed);
                 var yAngle = mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed;
