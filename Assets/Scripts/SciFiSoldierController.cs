@@ -66,6 +66,10 @@ public class SciFiSoldierController : MonoBehaviour
                 0.1f);
             Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation,
                 GetComponent<Transform>().rotation,0.1f);
+
+            if(Input.GetMouseButton(0)) {
+                actions.Attack();
+            }
         } else {
             GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
                 animator.GetFloat("Speed")*Time.fixedDeltaTime;
