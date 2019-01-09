@@ -63,6 +63,8 @@ public class SciFiSoldierController : MonoBehaviour
 
         if(Input.GetMouseButton(1)) {
             actions.Aiming();
+            GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
+                mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed);
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,
                 GetComponent<Transform>().position + GetComponent<Transform>().rotation*new Vector3(-0.2f,0.9f,-0.5f),
                 0.1f);
