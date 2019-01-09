@@ -6,7 +6,7 @@ public class SciFiSoldierController : MonoBehaviour
 {
     Actions actions;
     Animator animator;
-    
+    PlayerController playerController;
     Vector3 defaultCemeraPosition;
 
     public float movementSpeed;
@@ -17,6 +17,8 @@ public class SciFiSoldierController : MonoBehaviour
         actions = GetComponent<Actions>();
         animator = GetComponent<Animator>();
         defaultCemeraPosition = new Vector3(0,1,-1);
+        playerController = GetComponent<PlayerController>();
+        playerController.SetArsenal("Rifle");
     }
 
     // Update is called once per frame
@@ -47,13 +49,20 @@ public class SciFiSoldierController : MonoBehaviour
         } else {
             actions.Stay();
         }
+
         if(Input.GetKeyDown(KeyCode.Space)) {
             actions.Jump();
             GetComponent<Rigidbody>().AddForce(Vector3.up*3,ForceMode.Impulse);
         }
+
         if(Input.GetKeyDown(KeyCode.C)) {
             actions.Sitting();
         }
+
+        if(Input.GetMouseButton(1)) {
+            actions.Aiming();
+        }
+        
         GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
             animator.GetFloat("Speed")*Time.fixedDeltaTime;
         GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
