@@ -11,6 +11,8 @@ public class SciFiSoldierController : MonoBehaviour
     bool resettingCameraPosition;
 
     public float movementSpeed;
+    public GameObject spine;
+    Quaternion spineRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +23,24 @@ public class SciFiSoldierController : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         playerController.SetArsenal("Rifle");
         resettingCameraPosition = false;
+        spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         float moveForwardAmount = Input.GetAxis("Vertical");
         float rotateAmount = Input.GetAxis("Horizontal");
         float mouseMoveAmountX = Input.GetAxis("Mouse X");
         float mouseMoveAmountY = Input.GetAxis("Mouse Y");
-
+        var yAngle = mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed;
+        var maxAngle = 60;
+        var minAngle = 20;
+        var cameraDir = Camera.main.transform.position - GetComponent<Transform>().position;
+        var angleBetweenCameraAndFloor = Vector3.Angle(cameraDir,
+            new Vector3(cameraDir.x,0,cameraDir.z));
+        var newYAngle = Mathf.Clamp(angleBetweenCameraAndFloor+yAngle,minAngle,maxAngle)-angleBetweenCameraAndFloor;
+                
         if(Mathf.Abs(moveForwardAmount) > 0) {
             GetComponent<Transform>().rotation = Quaternion.Lerp(GetComponent<Transform>().rotation,
                 Quaternion.LookRotation(new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z),Vector3.up),0.1f);
@@ -65,8 +75,15 @@ public class SciFiSoldierController : MonoBehaviour
             actions.Aiming();
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
                 mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed);
+            Debug.Log(yAngle);
+            Debug.Log(spine.transform.localRotation.eulerAngles);
+            spine.transform.localRotation = spineRotation;
+            spine.transform.localRotation = Quaternion.Lerp(spine.transform.localRotation,
+                spine.transform.localRotation*Quaternion.Euler(0,0,-yAngle*4),0.1f);
+            spineRotation = spine.transform.localRotation;
+            Debug.Log(spine.transform.localRotation.eulerAngles);
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,
-                GetComponent<Transform>().position + GetComponent<Transform>().rotation*new Vector3(-0.2f,0.9f,-0.5f),
+                GetComponent<Transform>().position + GetComponent<Transform>().rotation*new Vector3(-0.2f,0.9f,-1f),
                 0.1f);
             Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation,
                 GetComponent<Transform>().rotation,0.1f);
@@ -77,6 +94,7 @@ public class SciFiSoldierController : MonoBehaviour
         } else {
             if (Input.GetMouseButtonUp(1)) {
                 resettingCameraPosition = true;
+                spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
             }
             GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
                 animator.GetFloat("Speed")*Time.fixedDeltaTime;
@@ -95,13 +113,7 @@ public class SciFiSoldierController : MonoBehaviour
             } else if(moveForwardAmount == 0) {
                 Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
                     Mathf.Clamp(mouseMoveAmountX,-5,5)*Time.fixedDeltaTime*movementSpeed);
-                var yAngle = mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed;
-                var maxAngle = 60;
-                var minAngle = 20;
-                var cameraDir = Camera.main.transform.position - GetComponent<Transform>().position;
-                var angleBetweenCameraAndFloor = Vector3.Angle(cameraDir,
-                    new Vector3(cameraDir.x,0,cameraDir.z));
-                var newYAngle = Mathf.Clamp(angleBetweenCameraAndFloor+yAngle,minAngle,maxAngle)-angleBetweenCameraAndFloor;
+                
                 Camera.main.transform.RotateAround(GetComponent<Transform>().position, Camera.main.transform.right,
                     newYAngle);
                 Camera.main.transform.LookAt(GetComponent<Transform>().position + Vector3.up);

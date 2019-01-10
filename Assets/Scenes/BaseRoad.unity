@@ -20800,6 +20800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 120
+  spine: {fileID: 1826576845}
 --- !u!136 &1052366272
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35193,6 +35194,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4531f4941a67045459499f23ed5bc711, type: 3}
+--- !u!1 &1826576845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100076, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+    type: 3}
+  m_PrefabInstance: {fileID: 2110947935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1828603014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 465820, guid: 9df1de1cce3de2543bef4a7da4ce501b,
@@ -40800,6 +40807,10 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: dbad280ee68364a458cdd686ee45b5d5, type: 2}
     - target: {fileID: 9500000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
