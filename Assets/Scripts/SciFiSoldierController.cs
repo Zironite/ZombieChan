@@ -82,11 +82,12 @@ public class SciFiSoldierController : MonoBehaviour
                 spine.transform.localRotation*Quaternion.Euler(0,0,-yAngle*4),0.1f);
             spineRotation = spine.transform.localRotation;
             Debug.Log(spine.transform.localRotation.eulerAngles);
+            var relativeCameraRotation = Quaternion.Euler(-spineRotation.eulerAngles.z,0,0);
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,
-                GetComponent<Transform>().position + GetComponent<Transform>().rotation*new Vector3(-0.2f,0.9f,-1f),
+                spine.transform.position - 0.7f*spine.transform.up - 0.4f*spine.transform.right - 0.1f*spine.transform.forward,
                 0.1f);
             Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation,
-                GetComponent<Transform>().rotation,0.1f);
+                GetComponent<Transform>().rotation*relativeCameraRotation,0.1f);
 
             if(Input.GetMouseButton(0)) {
                 actions.Attack();
