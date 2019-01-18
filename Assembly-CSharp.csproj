@@ -70,11 +70,11 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\SciFiSoldierController.cs" />
+    <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
     <Compile Include="Assets\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterPanel.cs" />
     <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterViewer.cs" />
     <Compile Include="Assets\Yurowm\Demo\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Zombie\Scripts\ZombieBehaviour.cs" />
     <None Include="Assets\Yurowm\Shaders\SkinShader.shader" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
