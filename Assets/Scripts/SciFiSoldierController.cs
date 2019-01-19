@@ -33,7 +33,7 @@ public class SciFiSoldierController : MonoBehaviour
         float rotateAmount = Input.GetAxis("Horizontal");
         float mouseMoveAmountX = Input.GetAxis("Mouse X");
         float mouseMoveAmountY = Input.GetAxis("Mouse Y");
-        var yAngle = mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed;
+        var yAngle = mouseMoveAmountY*Time.fixedDeltaTime*movementSpeed*10;
         var maxAngle = 60;
         var minAngle = 20;
         var cameraDir = Camera.main.transform.position - GetComponent<Transform>().position;
@@ -74,7 +74,7 @@ public class SciFiSoldierController : MonoBehaviour
         if(Input.GetMouseButton(1)) {
             actions.Aiming();
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
-                mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed);
+                mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed*10);
             Debug.Log(yAngle);
             Debug.Log(spine.transform.localRotation.eulerAngles);
             spine.transform.localRotation = spineRotation;
@@ -98,9 +98,9 @@ public class SciFiSoldierController : MonoBehaviour
                 spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
             }
             GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
-                animator.GetFloat("Speed")*Time.fixedDeltaTime;
+                animator.GetFloat("Speed")*movementSpeed*Time.fixedDeltaTime;
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
-                rotateAmount*Time.fixedDeltaTime*movementSpeed);
+                rotateAmount*Time.fixedDeltaTime*movementSpeed*10);
             if(resettingCameraPosition) {
                 var newCameraPosition = GetComponent<Transform>().position + GetComponent<Transform>().rotation*defaultCemeraPosition;
                 var newCameraRotation = Quaternion.LookRotation(GetComponent<Transform>().forward,Vector3.up);
@@ -113,7 +113,7 @@ public class SciFiSoldierController : MonoBehaviour
                     }
             } else if(moveForwardAmount == 0) {
                 Camera.main.transform.RotateAround(GetComponent<Transform>().position,Vector3.up,
-                    Mathf.Clamp(mouseMoveAmountX,-5,5)*Time.fixedDeltaTime*movementSpeed);
+                    Mathf.Clamp(mouseMoveAmountX,-5,5)*Time.fixedDeltaTime*movementSpeed*10);
                 
                 Camera.main.transform.RotateAround(GetComponent<Transform>().position, Camera.main.transform.right,
                     newYAngle);
