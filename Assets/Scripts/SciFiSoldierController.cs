@@ -15,6 +15,7 @@ public class SciFiSoldierController : MonoBehaviour
     Quaternion spineRotation;
     public GameObject gunMuzzleFlash;
     bool isFiring;
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +97,7 @@ public class SciFiSoldierController : MonoBehaviour
                 isFiring = true;
                 actions.Attack();
                 StartCoroutine(ActivateMuzzleFlash());
+                Instantiate(bullet, gunMuzzleFlash.transform.position, Camera.main.transform.rotation);
             }
         } else {
             if (Input.GetMouseButtonUp(1)) {
@@ -127,7 +129,7 @@ public class SciFiSoldierController : MonoBehaviour
         }
     }
 
-    public IEnumerator ActivateMuzzleFlash() {
+    public IEnumerator ActivateMuzzleFlash() {;
         gunMuzzleFlash.GetComponent<Light>().enabled = true;
         yield return new WaitForSeconds(0.1f);
         gunMuzzleFlash.GetComponent<Light>().enabled = false;

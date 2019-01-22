@@ -24529,6 +24529,7 @@ MonoBehaviour:
   movementSpeed: 5
   spine: {fileID: 1826576845}
   gunMuzzleFlash: {fileID: 128004882}
+  bullet: {fileID: 621086560098183626, guid: 0743b013dfa733959ba8077777b0ff92, type: 3}
 --- !u!136 &1052366272
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46491,11 +46492,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690776, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690776, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690776, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5929219808525690775, guid: bdd4547a4e08a681f9d6f1861212c5ff,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690775, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690775, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690775, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690775, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929219808525690775, guid: bdd4547a4e08a681f9d6f1861212c5ff,
+        type: 3}
+      propertyPath: m_Flare
+      value: 
+      objectReference: {fileID: 12100000, guid: f3cd23d6d3e3d490cb471c69069c97a1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd4547a4e08a681f9d6f1861212c5ff, type: 3}
 --- !u!4 &2037026553 stripped
