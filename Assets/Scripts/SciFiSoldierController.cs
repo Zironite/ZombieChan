@@ -16,7 +16,7 @@ public class SciFiSoldierController : MonoBehaviour
     public GameObject gunMuzzleFlash;
     bool isFiring;
     public GameObject bullet;
-
+    float lightIntensityTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,7 @@ public class SciFiSoldierController : MonoBehaviour
         resettingCameraPosition = false;
         spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
         isFiring = false;
+        lightIntensityTarget = 3;
     }
 
     // Update is called once per frame
@@ -129,15 +130,24 @@ public class SciFiSoldierController : MonoBehaviour
         }
     }
 
-    public IEnumerator ActivateMuzzleFlash() {;
-        gunMuzzleFlash.GetComponent<Light>().enabled = true;
-        yield return new WaitForSeconds(0.1f);
-        gunMuzzleFlash.GetComponent<Light>().enabled = false;
-        StartCoroutine(FiringCooldown());
+    public IEnumerator ActivateMuzzleFlash() {
+        var gunMuzzleLight = gunMuzzleFlash.GetComponent<Light>();
+        lightIntensityTarget = Random.Range(3,10);
+        while (Mathf.Abs(gunMuzzleLight.intensity - lightIntensityTarget) > 0.001f) {
+            Debug.Log(gunMuzzleLight.intensity);
+            FadeGunMuzzleFlash(lightIntensityTarget);
+            yield return new WaitForEndOfFrame();
+        }
+        while (gunMuzzleLight.intensity > 0.001f) {
+            Debug.Log(gunMuzzleLight.intensity);
+            FadeGunMuzzleFlash(0);
+            yield return new WaitForEndOfFrame();
+        }
+        isFiring = false;
     }
 
-    public IEnumerator FiringCooldown() {
-        yield return new WaitForSeconds(0.3f);
-        isFiring = false;
+    public void FadeGunMuzzleFlash(float value) {
+        gunMuzzleFlash.GetComponent<Light>().intensity = 
+                    Mathf.Lerp(gunMuzzleFlash.GetComponent<Light>().intensity, value, 0.95f);
     }
 }
