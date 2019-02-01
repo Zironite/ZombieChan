@@ -12,8 +12,9 @@ public class CrosshairScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        defaultColor = GetComponent<Image>().material.color;
+        defaultColor = new Color(0,0,0,0.75f);
         aimedOnEnemyColor = new Color(256,0,0,defaultColor.a);
+        GetComponent<Image>().material.color = defaultColor;
     }
 
     // Update is called once per frame
