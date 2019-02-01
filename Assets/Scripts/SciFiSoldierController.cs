@@ -98,7 +98,7 @@ public class SciFiSoldierController : MonoBehaviour
                 isFiring = true;
                 actions.Attack();
                 StartCoroutine(ActivateMuzzleFlash());
-                Instantiate(bullet, gunMuzzleFlash.transform.position, Camera.main.transform.rotation);
+                Instantiate(bullet, gunMuzzleFlash.transform.position + Vector3.up*0.1f, Camera.main.transform.rotation);
             }
         } else {
             if (Input.GetMouseButtonUp(1)) {
