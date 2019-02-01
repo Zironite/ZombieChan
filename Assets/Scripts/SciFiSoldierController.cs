@@ -84,7 +84,7 @@ public class SciFiSoldierController : MonoBehaviour
             Debug.Log(spine.transform.localRotation.eulerAngles);
             spine.transform.localRotation = spineRotation;
             spine.transform.localRotation = Quaternion.Lerp(spine.transform.localRotation,
-                spine.transform.localRotation*Quaternion.Euler(0,0,yAngle*4),0.1f);
+                spine.transform.localRotation*Quaternion.Euler(0,0,yAngle*40),0.1f);
             spineRotation = spine.transform.localRotation;
             Debug.Log(spine.transform.localRotation.eulerAngles);
             var relativeCameraRotation = Quaternion.Euler(-spineRotation.eulerAngles.z,0,0);
@@ -98,7 +98,7 @@ public class SciFiSoldierController : MonoBehaviour
                 isFiring = true;
                 actions.Attack();
                 StartCoroutine(ActivateMuzzleFlash());
-                Instantiate(bullet, gunMuzzleFlash.transform.position, Camera.main.transform.rotation);
+                Instantiate(bullet, gunMuzzleFlash.transform.position + Vector3.up*0.1f, Camera.main.transform.rotation);
             }
         } else {
             if (Input.GetMouseButtonUp(1)) {
@@ -108,7 +108,7 @@ public class SciFiSoldierController : MonoBehaviour
             GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
                 animator.GetFloat("Speed")*movementSpeed*Time.fixedDeltaTime;
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
-                rotateAmount*Time.fixedDeltaTime*movementSpeed*10);
+                rotateAmount*Time.fixedDeltaTime*movementSpeed*40);
             if(resettingCameraPosition) {
                 var newCameraPosition = GetComponent<Transform>().position + GetComponent<Transform>().rotation*defaultCemeraPosition;
                 var newCameraRotation = Quaternion.LookRotation(GetComponent<Transform>().forward,Vector3.up);
