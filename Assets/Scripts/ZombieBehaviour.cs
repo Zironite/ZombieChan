@@ -8,7 +8,7 @@ public class ZombieBehaviour : MonoBehaviour
     // Variables
     private float attackDistance = 0.7f;
     private float chaseDistance = 10f;
-    private float life = 100f;
+    private bool isAlive= true;
 
     // Components
     private Animator zombieAnimator;
@@ -27,7 +27,7 @@ public class ZombieBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life > 0)
+        if (isAlive == true)
         {
             if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance)
             {
@@ -55,6 +55,14 @@ public class ZombieBehaviour : MonoBehaviour
             zombieAnimator.SetBool("Walk", false);
             zombieAnimator.SetBool("Alive", false);
             zombieNavAgent.enabled = false;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            isAlive = false;
+            GameObject.Destroy(collision.gameObject);
         }
     }
 }

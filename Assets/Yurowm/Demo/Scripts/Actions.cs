@@ -15,17 +15,20 @@ public class Actions : MonoBehaviour {
 
 	public void Stay () {
 		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0f);
+        foreach (GameObject tc in GameObject.FindGameObjectsWithTag("TargetCross")) tc.GetComponent<Canvas>().enabled = false;
+        animator.SetFloat ("Speed", 0f);
 		}
 
 	public void Walk () {
 		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0.5f);
+        foreach (GameObject tc in GameObject.FindGameObjectsWithTag("TargetCross")) tc.GetComponent<Canvas>().enabled = false;
+        animator.SetFloat ("Speed", 0.5f);
 	}
 
 	public void Run () {
 		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 1f);
+        foreach (GameObject tc in GameObject.FindGameObjectsWithTag("TargetCross")) tc.GetComponent<Canvas>().enabled = false;
+        animator.SetFloat ("Speed", 1f);
 	}
 
 	public void Attack () {
@@ -55,17 +58,20 @@ public class Actions : MonoBehaviour {
 		animator.SetBool ("Squat", false);
 		animator.SetFloat ("Speed", 0f);
 		animator.SetBool("Aiming", false);
-		animator.SetTrigger ("Jump");
+        foreach (GameObject tc in GameObject.FindGameObjectsWithTag("TargetCross")) tc.GetComponent<Canvas>().enabled = false;
+        animator.SetTrigger ("Jump");
 	}
 
 	public void Aiming () {
 		animator.SetBool ("Squat", false);
 		animator.SetFloat ("Speed", 0f);
-		animator.SetBool("Aiming", true);
-	}
+        animator.SetBool("Aiming", true);
+        foreach(GameObject tc in GameObject.FindGameObjectsWithTag("TargetCross")) tc.GetComponent<Canvas>().enabled = true;
+    }
 
-	public void Sitting () {
+    public void Sitting () {
 		animator.SetBool ("Squat", !animator.GetBool("Squat"));
 		animator.SetBool("Aiming", false);
-	}
+        foreach (GameObject tc in GameObject.FindGameObjectsWithTag("TargetCross")) tc.GetComponent<Canvas>().enabled = false;
+    }
 }

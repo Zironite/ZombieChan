@@ -14150,7 +14150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615877057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.635983, y: -0.935189, z: 14.964016}
+  m_LocalPosition: {x: -26.635983, y: -0.94, z: 14.964016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 322183291}
@@ -24481,6 +24481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChrosshairCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1281467534966256, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
+      propertyPath: m_TagString
+      value: TargetCross
+      objectReference: {fileID: 0}
     - target: {fileID: 224597112092344012, guid: e79c6b4804dec6f4eb0125d2081d435f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24619,7 +24623,17 @@ PrefabInstance:
     - target: {fileID: 224795161209764702, guid: e79c6b4804dec6f4eb0125d2081d435f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 60
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 224795161209764702, guid: e79c6b4804dec6f4eb0125d2081d435f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224795161209764702, guid: e79c6b4804dec6f4eb0125d2081d435f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114335161369775038, guid: e79c6b4804dec6f4eb0125d2081d435f,
         type: 3}
@@ -24676,6 +24690,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
@@ -25917,7 +25935,7 @@ MonoBehaviour:
   movementSpeed: 5
   spine: {fileID: 1826576845}
   gunMuzzleFlash: {fileID: 128004882}
-  bullet: {fileID: 621086560098183626, guid: 0743b013dfa733959ba8077777b0ff92, type: 3}
+  bullet: {fileID: 7031417910664557955, guid: e86d18279700c104e8a2e219be0e3d8d, type: 3}
 --- !u!136 &1052366272
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36350,7 +36368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517366597}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 0.0311, z: 9.3}
+  m_LocalPosition: {x: -5.5, y: 0.031, z: 9.3}
   m_LocalScale: {x: 5.5, y: 1, z: 5.1}
   m_Children: []
   m_Father: {fileID: 1933421798}
