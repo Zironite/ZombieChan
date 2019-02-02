@@ -14,6 +14,7 @@ public class ZombieBehaviour : MonoBehaviour
     private Animator zombieAnimator;
     private NavMeshAgent zombieNavAgent;
     private GameObject player;
+    private Renderer zombieRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ZombieBehaviour : MonoBehaviour
         zombieAnimator = GetComponent<Animator>();
         zombieNavAgent = GetComponent<NavMeshAgent>();
         zombieNavAgent.enabled = false;
+        zombieRenderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class ZombieBehaviour : MonoBehaviour
         {
             isAlive = false;
             GameObject.Destroy(collision.gameObject);
+            GameObject.Destroy(gameObject, 4);
         }
     }
 }
