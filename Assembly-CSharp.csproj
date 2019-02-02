@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\CrosshairScript.cs" />
+     <Compile Include="Assets\Scripts\ExplosionScript.cs" />
      <Compile Include="Assets\Scripts\SciFiSoldierController.cs" />
      <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\Actions.cs" />
