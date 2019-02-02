@@ -45,7 +45,8 @@ public class SciFiSoldierController : MonoBehaviour
         var angleBetweenCameraAndFloor = Vector3.Angle(cameraDir,
             new Vector3(cameraDir.x,0,cameraDir.z));
         var newYAngle = Mathf.Clamp(angleBetweenCameraAndFloor+yAngle,minAngle,maxAngle)-angleBetweenCameraAndFloor;
-        gunMuzzleFlash.transform.position = spine.transform.position + Camera.main.transform.forward;        
+        gunMuzzleFlash.transform.position = spine.transform.position + Camera.main.transform.forward*0.5f +
+            Vector3.up*0.1f;        
         if(Mathf.Abs(moveForwardAmount) > 0) {
             GetComponent<Transform>().rotation = Quaternion.Lerp(GetComponent<Transform>().rotation,
                 Quaternion.LookRotation(new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z),Vector3.up),0.1f);
