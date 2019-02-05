@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TargetCross
   - Bullet
+  - HealthText
   layers:
   - Default
   - TransparentFX

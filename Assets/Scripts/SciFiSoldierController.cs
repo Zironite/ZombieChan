@@ -17,6 +17,7 @@ public class SciFiSoldierController : MonoBehaviour
     bool isFiring;
     public GameObject bullet;
     float lightIntensityTarget;
+    int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class SciFiSoldierController : MonoBehaviour
         spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
         isFiring = false;
         lightIntensityTarget = 3;
+        health = 100;
     }
 
     // Update is called once per frame
