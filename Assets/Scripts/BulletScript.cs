@@ -27,6 +27,7 @@ public class BulletScript : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision) {
         Destroy(this.gameObject);
+        Debug.Log(collision.gameObject);
         Instantiate(explosion, transform.position, transform.rotation);
     }
 }
