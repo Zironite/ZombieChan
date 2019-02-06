@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 public class ZombieBehaviour : MonoBehaviour
 {
@@ -15,15 +16,21 @@ public class ZombieBehaviour : MonoBehaviour
     private NavMeshAgent zombieNavAgent;
     private GameObject player;
     private Renderer zombieRenderer;
-
+    private Transform[] points;
+    private Transform[] shuffledPoints;
+    private int nextDest;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         zombieAnimator = GetComponent<Animator>();
         zombieNavAgent = GetComponent<NavMeshAgent>();
-        zombieNavAgent.enabled = false;
+        zombieNavAgent.enabled = true;
         zombieRenderer = GetComponent<Renderer>();
+        points = GameObject.FindGameObjectsWithTag("PatrolPoint").Select(p => p.transform).ToArray();
+        shuffledPoints = points.OrderBy(p => Random.Range(0,2) == 0).ToArray();
+        nextDest = 0;
+        GotToNextDestination();
     }
 
     // Update is called once per frame
@@ -44,11 +51,12 @@ public class ZombieBehaviour : MonoBehaviour
                 zombieNavAgent.enabled = true;
                 zombieNavAgent.SetDestination(player.transform.position);
             }
-            else
+            else if (!zombieNavAgent.pathPending && Vector3.Distance(transform.position, zombieNavAgent.destination) <= 1)
             {
                 zombieAnimator.SetBool("Attack", false);
-                zombieAnimator.SetBool("Walk", false);
-                zombieNavAgent.enabled = false;
+                zombieAnimator.SetBool("Walk", true);
+                zombieNavAgent.enabled = true;
+                GotToNextDestination();
             }
         }
         else
@@ -67,5 +75,11 @@ public class ZombieBehaviour : MonoBehaviour
             GameObject.Destroy(collision.gameObject);
             GameObject.Destroy(gameObject, 4);
         }
+    }
+
+    private void GotToNextDestination() {
+        zombieNavAgent.SetDestination(shuffledPoints[nextDest].position);
+        if(nextDest == shuffledPoints.Length - 1) nextDest = 0;
+        else nextDest++;
     }
 }

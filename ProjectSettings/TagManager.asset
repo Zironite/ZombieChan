@@ -7,6 +7,7 @@ TagManager:
   - TargetCross
   - Bullet
   - HealthText
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX
