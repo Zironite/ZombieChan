@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3236159304208997095}
   - component: {fileID: 3236159304208997094}
   - component: {fileID: 3236159304208997089}
-  - component: {fileID: 3236159304208997092}
   - component: {fileID: 785233518097215918}
   m_Layer: 0
   m_Name: Explosion
@@ -661,7 +660,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 17
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -977,7 +976,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 200
+        scalar: 500
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -4758,22 +4757,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!123 &3236159304208997092
-LensFlare:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3236159304208997088}
-  m_Enabled: 1
-  m_Flare: {fileID: 12100000, guid: 5681314a26a394990806a2eb6f15a468, type: 2}
-  m_Color: {r: 0, g: 1, b: 0.8602793, a: 0}
-  m_Brightness: 1
-  m_FadeSpeed: 3
-  m_IgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 6
-  m_Directional: 0
 --- !u!114 &785233518097215918
 MonoBehaviour:
   m_ObjectHideFlags: 0
