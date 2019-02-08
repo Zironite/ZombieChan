@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{261325BF-6DEC-E84F-13A7-C47C02F45376}</ProjectGuid>
+    <ProjectGuid>{E38B49C6-4CA5-2DCE-8CFF-2F13A63A7BA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -53,27 +53,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CursorsAndCrosshairs\CursorChanger.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-     <Compile Include="Assets\Scripts\BulletScript.cs" />
-     <Compile Include="Assets\Scripts\CameraScript.cs" />
-     <Compile Include="Assets\Scripts\CrosshairScript.cs" />
-     <Compile Include="Assets\Scripts\ExplosionScript.cs" />
-     <Compile Include="Assets\Scripts\SciFiSoldierController.cs" />
-     <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
-     <Compile Include="Assets\Yurowm\Demo\Scripts\Actions.cs" />
-     <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterPanel.cs" />
-     <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterViewer.cs" />
-     <Compile Include="Assets\Yurowm\Demo\Scripts\PlayerController.cs" />
-     <None Include="Assets\Yurowm\Shaders\SkinShader.shader" />
-     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+     <Compile Include="Assets\Aura\Editor\Drawers\ColorCircularPickerDrawer.cs" />
+     <Compile Include="Assets\Aura\Editor\Drawers\Texture3DPreviewDrawer.cs" />
+     <Compile Include="Assets\Aura\Editor\Editors\AuraEditor.cs" />
+     <Compile Include="Assets\Aura\Editor\Editors\AuraLightEditor.cs" />
+     <Compile Include="Assets\Aura\Editor\Editors\AuraVolumeEditor.cs" />
+     <Compile Include="Assets\Aura\Editor\Editors\CreateTexture3DAssetTool.cs" />
+     <Compile Include="Assets\Aura\Editor\Editors\Texture3DEditor.cs" />
+     <Compile Include="Assets\Aura\Editor\Enums\Texture3DReadingOrderEnum.cs" />
+     <Compile Include="Assets\Aura\Editor\Extensions\Texture3DExtensions.cs" />
+     <Compile Include="Assets\Aura\Editor\Helpers\GuiHelpers.cs" />
+     <Compile Include="Assets\Aura\Editor\Helpers\MeshHelpers.cs" />
+     <Compile Include="Assets\Aura\Editor\Helpers\PreviewRenderUtilityHelpers.cs" />
+     <Compile Include="Assets\Aura\Editor\Statics\GuiStyles.cs" />
+     <None Include="Assets\Aura\Editor\Shaders\ColorFieldDrawerShader.shader" />
+     <None Include="Assets\Aura\Editor\Shaders\Texture3DPreviewShader.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/mnt/linux2/home/liron/UnityProjects/ZombieChan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -275,6 +269,12 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
@@ -284,14 +284,41 @@
  <Reference Include="UnityEngine.Timeline">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Timeline">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.GoogleAudioSpatializer">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.SpatialTracking">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>/mnt/linux2/home/liron/UnityProjects/ZombieChan/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements.Editor">
  <HintPath>/mnt/linux2/home/liron/UnityProjects/ZombieChan/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
@@ -307,6 +334,9 @@
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>/mnt/linux2/home/liron/UnityProjects/ZombieChan/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>/mnt/linux2/home/liron/UnityProjects/ZombieChan/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/mnt/linux2/home/liron/Unity-2018.3.0f2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -666,6 +696,10 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{ACDD475E-4A2B-6AA2-BEB3-F231FA77C2C7}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{261325BF-6DEC-E84F-13A7-C47C02F45376}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{3D263C70-2EE0-C1C3-D948-5335DDCFEBB0}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

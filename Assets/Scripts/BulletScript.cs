@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     private float velocity;
     private float maxDistance;
     private Vector3 initialPosition;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -14,14 +15,19 @@ public class BulletScript : MonoBehaviour
         velocity = 100f;
         maxDistance = 500f;
         initialPosition = transform.position;
+        GetComponent<Rigidbody>().AddForce(transform.forward*velocity,ForceMode.Impulse);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((initialPosition - transform.position).magnitude <= maxDistance)
-            transform.position += transform.forward*velocity*Time.fixedDeltaTime;
-        else
+        if ((initialPosition - transform.position).magnitude > maxDistance)
             Destroy(this.gameObject);
+    }
+
+    public void OnCollisionEnter(Collision collision) {
+        Destroy(this.gameObject);
+        Debug.Log(collision.gameObject);
+        Instantiate(explosion, transform.position, transform.rotation);
     }
 }

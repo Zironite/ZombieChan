@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SciFiSoldierController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SciFiSoldierController : MonoBehaviour
     bool isFiring;
     public GameObject bullet;
     float lightIntensityTarget;
+    int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class SciFiSoldierController : MonoBehaviour
         spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
         isFiring = false;
         lightIntensityTarget = 3;
+        health = 100;
     }
 
     // Update is called once per frame
@@ -45,7 +48,8 @@ public class SciFiSoldierController : MonoBehaviour
         var angleBetweenCameraAndFloor = Vector3.Angle(cameraDir,
             new Vector3(cameraDir.x,0,cameraDir.z));
         var newYAngle = Mathf.Clamp(angleBetweenCameraAndFloor+yAngle,minAngle,maxAngle)-angleBetweenCameraAndFloor;
-        gunMuzzleFlash.transform.position = spine.transform.position + Camera.main.transform.forward;        
+        gunMuzzleFlash.transform.position = spine.transform.position + Camera.main.transform.forward*0.5f +
+            Vector3.up*0.1f;        
         if(Mathf.Abs(moveForwardAmount) > 0) {
             GetComponent<Transform>().rotation = Quaternion.Lerp(GetComponent<Transform>().rotation,
                 Quaternion.LookRotation(new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z),Vector3.up),0.1f);
@@ -80,13 +84,13 @@ public class SciFiSoldierController : MonoBehaviour
             actions.Aiming();
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
                 mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed*10);
-            Debug.Log(yAngle);
-            Debug.Log(spine.transform.localRotation.eulerAngles);
+            //Debug.Log(yAngle);
+            //Debug.Log(spine.transform.localRotation.eulerAngles);
             spine.transform.localRotation = spineRotation;
             spine.transform.localRotation = Quaternion.Lerp(spine.transform.localRotation,
                 spine.transform.localRotation*Quaternion.Euler(0,0,yAngle*40),0.1f);
             spineRotation = spine.transform.localRotation;
-            Debug.Log(spine.transform.localRotation.eulerAngles);
+            //Debug.Log(spine.transform.localRotation.eulerAngles);
             var relativeCameraRotation = Quaternion.Euler(-spineRotation.eulerAngles.z,0,0);
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,
                 spine.transform.position - 0.7f*spine.transform.up - 0.4f*spine.transform.right - 0.1f*spine.transform.forward,
@@ -128,18 +132,19 @@ public class SciFiSoldierController : MonoBehaviour
                 Camera.main.transform.LookAt(GetComponent<Transform>().position + Vector3.up);
             }
         }
+        GameObject.FindGameObjectWithTag("HealthText").GetComponent<Text>().text = health.ToString();
     }
 
     public IEnumerator ActivateMuzzleFlash() {
         var gunMuzzleLight = gunMuzzleFlash.GetComponent<Light>();
         lightIntensityTarget = Random.Range(3,10);
         while (Mathf.Abs(gunMuzzleLight.intensity - lightIntensityTarget) > 0.001f) {
-            Debug.Log(gunMuzzleLight.intensity);
+            // Debug.Log(gunMuzzleLight.intensity);
             FadeGunMuzzleFlash(lightIntensityTarget);
             yield return new WaitForEndOfFrame();
         }
         while (gunMuzzleLight.intensity > 0.001f) {
-            Debug.Log(gunMuzzleLight.intensity);
+            // Debug.Log(gunMuzzleLight.intensity);
             FadeGunMuzzleFlash(0);
             yield return new WaitForEndOfFrame();
         }
