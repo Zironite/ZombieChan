@@ -6,6 +6,8 @@ TagManager:
   tags:
   - TargetCross
   - Bullet
+  - TrainingWall
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
