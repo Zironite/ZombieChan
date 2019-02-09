@@ -129,6 +129,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8426440443074342075, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836225161249101847, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,6 +244,21 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6330091974081881320, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088239577897271408, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465657100733966362, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!1 &103252930
@@ -253,7 +273,7 @@ GameObject:
   - component: {fileID: 103252934}
   - component: {fileID: 103252933}
   - component: {fileID: 103252932}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: CanvasFail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +371,7 @@ GameObject:
   - component: {fileID: 111548761}
   - component: {fileID: 111548763}
   - component: {fileID: 111548762}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +465,7 @@ GameObject:
   - component: {fileID: 152269253}
   - component: {fileID: 152269252}
   - component: {fileID: 152269251}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,6 +751,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8426440443074342075, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836225161249101847, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -806,6 +831,21 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6330091974081881320, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088239577897271408, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465657100733966362, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!4 &256480185 stripped
@@ -825,7 +865,7 @@ GameObject:
   - component: {fileID: 275654889}
   - component: {fileID: 275654891}
   - component: {fileID: 275654890}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-GoToNext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +944,7 @@ GameObject:
   - component: {fileID: 318628251}
   - component: {fileID: 318628253}
   - component: {fileID: 318628252}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -983,7 +1023,7 @@ GameObject:
   - component: {fileID: 351721606}
   - component: {fileID: 351721608}
   - component: {fileID: 351721607}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-GoToNext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1329,7 @@ GameObject:
   - component: {fileID: 450304279}
   - component: {fileID: 450304281}
   - component: {fileID: 450304280}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Explanation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1518,6 +1558,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8426440443074342075, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836225161249101847, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1628,6 +1673,21 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6330091974081881320, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088239577897271408, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465657100733966362, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!1 &551532492
@@ -1642,7 +1702,7 @@ GameObject:
   - component: {fileID: 551532496}
   - component: {fileID: 551532495}
   - component: {fileID: 551532494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2028,7 +2088,7 @@ GameObject:
   - component: {fileID: 794736013}
   - component: {fileID: 794736015}
   - component: {fileID: 794736014}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2107,7 +2167,7 @@ GameObject:
   - component: {fileID: 795719210}
   - component: {fileID: 795719212}
   - component: {fileID: 795719211}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2189,7 +2249,7 @@ GameObject:
   - component: {fileID: 834925175}
   - component: {fileID: 834925174}
   - component: {fileID: 834925173}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2292,7 +2352,7 @@ GameObject:
   - component: {fileID: 855515347}
   - component: {fileID: 855515349}
   - component: {fileID: 855515348}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2426,7 @@ GameObject:
   - component: {fileID: 878042598}
   - component: {fileID: 878042600}
   - component: {fileID: 878042599}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2440,7 +2500,7 @@ GameObject:
   - component: {fileID: 944846292}
   - component: {fileID: 944846294}
   - component: {fileID: 944846293}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-GoToNext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2522,7 +2582,7 @@ GameObject:
   - component: {fileID: 967960832}
   - component: {fileID: 967960831}
   - component: {fileID: 967960830}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2613,7 +2673,7 @@ GameObject:
   - component: {fileID: 1067660548}
   - component: {fileID: 1067660550}
   - component: {fileID: 1067660549}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2763,7 +2823,7 @@ GameObject:
   - component: {fileID: 1184254860}
   - component: {fileID: 1184254859}
   - component: {fileID: 1184254858}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2854,7 +2914,7 @@ GameObject:
   - component: {fileID: 1253035450}
   - component: {fileID: 1253035452}
   - component: {fileID: 1253035451}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-GoToNext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2945,7 +3005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1363494048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StaticCheckPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2981,7 +3041,7 @@ GameObject:
   - component: {fileID: 1430133708}
   - component: {fileID: 1430133707}
   - component: {fileID: 1430133706}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3078,7 +3138,7 @@ GameObject:
   - component: {fileID: 1441663890}
   - component: {fileID: 1441663892}
   - component: {fileID: 1441663891}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-GoToNext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3155,7 +3215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566269728}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MovingCheckPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3288,7 +3348,7 @@ GameObject:
   - component: {fileID: 1684302253}
   - component: {fileID: 1684302255}
   - component: {fileID: 1684302254}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3367,7 +3427,7 @@ GameObject:
   - component: {fileID: 1769339928}
   - component: {fileID: 1769339930}
   - component: {fileID: 1769339929}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3441,7 +3501,7 @@ GameObject:
   - component: {fileID: 1841492818}
   - component: {fileID: 1841492820}
   - component: {fileID: 1841492819}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: END
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3801,6 +3861,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8426440443074342075, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836225161249101847, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3911,6 +3976,21 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6330091974081881320, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088239577897271408, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465657100733966362, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!1 &1947222181
@@ -3926,7 +4006,7 @@ GameObject:
   - component: {fileID: 1947222184}
   - component: {fileID: 1947222183}
   - component: {fileID: 1947222186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MovingWall
   m_TagString: TrainingWall
   m_Icon: {fileID: 0}
@@ -4042,7 +4122,7 @@ GameObject:
   - component: {fileID: 2010044561}
   - component: {fileID: 2010044563}
   - component: {fileID: 2010044562}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4133,7 +4213,7 @@ GameObject:
   - component: {fileID: 2112639141}
   - component: {fileID: 2112639143}
   - component: {fileID: 2112639142}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text-GoToNext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4218,6 +4298,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8426440443074342075, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836225161249101847, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4312,6 +4397,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330091974081881320, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088239577897271408, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465657100733966362, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
@@ -4350,6 +4450,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8426440443074342075, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836225161249101847, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4424,6 +4529,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330091974081881320, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088239577897271408, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465657100733966362, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
