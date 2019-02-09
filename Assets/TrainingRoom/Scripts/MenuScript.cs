@@ -29,19 +29,19 @@ public class MenuScript : MonoBehaviour
                 whoareweVisable = false;
             }
 
-            if (GUI.Button(new Rect(40, 60, Screen.width - 180, 40), "New Game"))
+            if (GUI.Button(new Rect(40, 20, Screen.width - 180, (Screen.height - 100 - 20) / 3), "New Game"))
             {
                 menuVisible = false;
                 gameStarted = true;
             }
 
-            if (GUI.Button(new Rect(40, 130, Screen.width - 180, 40), "Restart Tutorial"))
+            if (GUI.Button(new Rect(40, (Screen.height - 100 - 20) / 3 + 20, Screen.width - 180, (Screen.height - 100 - 20) / 3), "Restart Tutorial"))
             {
                 menuVisible = false;
                 gameStarted = true;
             }
 
-            if (GUI.Button(new Rect(40, 200, Screen.width - 180, 40), "Who are we?"))
+            if (GUI.Button(new Rect(40, (Screen.height - 100 - 20) * 2 / 3 + 20, Screen.width - 180, (Screen.height - 100 - 20) / 3), "Who are we?"))
             {
                 menuVisible = false;
                 whoareweVisable = true;
@@ -53,15 +53,18 @@ public class MenuScript : MonoBehaviour
         {
             if (whoareweVisable == true)
             {
-                GUI.BeginGroup(new Rect(200, 50, Screen.width - 400, Screen.height - 100));
+                GUI.BeginGroup(new Rect(300, 200, Screen.width - 600, Screen.height - 400));
 
-                GUI.Box(new Rect(0, 0, Screen.width - 400, Screen.height - 100), "Zumbi-chan");
+                GUI.Box(new Rect(0, 0, Screen.width - 600, Screen.height - 400), "Zumbi-chan");
 
-                if (GUI.Button(new Rect(Screen.width - 450, 10, 40, 40), "X"))
+                if (GUI.Button(new Rect(Screen.width - 650, 10, 40, 40), "X"))
                 {
                     menuVisible = true;
                     whoareweVisable = false;
                 }
+
+                GUI.Label(new Rect(10, (Screen.height - 400) / 3, 300, 40), "Maor Yakov Walter - 316046952");
+                GUI.Label(new Rect(10, (Screen.height - 400) * 2 / 3, 300, 40), "Liron Levi - 207981713");
 
                 GUI.EndGroup();
             }
