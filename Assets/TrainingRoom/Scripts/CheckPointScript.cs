@@ -24,9 +24,9 @@ public class CheckPointScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             switch (parent.name)
             {
@@ -79,20 +79,11 @@ public class CheckPointScript : MonoBehaviour
                     break;
             }
         }
-        if (collision.gameObject.tag == "Bullet")
-        {
-            if (parent.name == "CheckPoint6")
-            {
-                checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint5").SetActive(false);
-                parent.transform.Find("Canvas").gameObject.SetActive(true);
-                StartCoroutine(ShowMenu());
-            }
-        }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             switch (parent.name)
             {
@@ -109,6 +100,19 @@ public class CheckPointScript : MonoBehaviour
                 case "CheckPoint4":
                     parent.SetActive(false);
                     break;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            if (parent.name == "CheckPoint6")
+            {
+                checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint5").SetActive(false);
+                parent.transform.Find("Canvas").gameObject.SetActive(true);
+                StartCoroutine(ShowMenu());
             }
         }
     }

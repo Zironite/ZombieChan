@@ -259,6 +259,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!1 &103252930
@@ -846,6 +856,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!4 &256480185 stripped
@@ -1106,6 +1126,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TargetCross
       objectReference: {fileID: 0}
+    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 224597112092344012, guid: e79c6b4804dec6f4eb0125d2081d435f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1311,10 +1335,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
@@ -1687,6 +1707,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
@@ -3606,7 +3636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4415,6 +4445,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!224 &2137179676 stripped
@@ -4546,6 +4586,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
