@@ -54,6 +54,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CursorsAndCrosshairs\CursorChanger.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\DWG\Scripts\DWGBuilder.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\DWG\Scripts\DWGColliderEnabler.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\DWG\Scripts\DWGCreateBrick.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\DWG\Scripts\DWGDestroyer.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\DWG\Scripts\DWGPhysicsCheck.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\DWG\Scripts\DWGTagManager.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\Example\Scripts\CameraFreeRoam.cs" />
+     <Compile Include="Assets\DestructibleWallGenerator\Example\Scripts\ThrowObject.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -68,11 +76,14 @@
      <Compile Include="Assets\Scripts\ExplosionScript.cs" />
      <Compile Include="Assets\Scripts\SciFiSoldierController.cs" />
      <Compile Include="Assets\Scripts\ZombieBehaviour.cs" />
+     <Compile Include="Assets\TrainingRoom\Scripts\CheckPointScript.cs" />
+     <Compile Include="Assets\TrainingRoom\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\Actions.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterPanel.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterViewer.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\PlayerController.cs" />
      <None Include="Assets\Yurowm\Shaders\SkinShader.shader" />
+     <None Include="Assets\DestructibleWallGenerator\DWG\Documentation\ReadMe.txt" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/mnt/linux2/home/liron/UnityProjects/ZombieChan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

@@ -30,6 +30,9 @@ public class ZombieBehaviour : MonoBehaviour
         points = GameObject.FindGameObjectsWithTag("PatrolPoint").Select(p => p.transform).ToArray();
         shuffledPoints = points.OrderBy(p => Random.Range(0,2) == 0).ToArray();
         nextDest = 0;
+        zombieAnimator.SetBool("Attack", false);
+        zombieAnimator.SetBool("Walk", true);
+        zombieNavAgent.enabled = true;
         GotToNextDestination();
     }
 
