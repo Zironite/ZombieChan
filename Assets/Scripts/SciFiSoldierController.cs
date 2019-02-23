@@ -19,6 +19,7 @@ public class SciFiSoldierController : MonoBehaviour
     public GameObject bullet;
     float lightIntensityTarget;
     public int health;
+    public bool isTraining = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +39,8 @@ public class SciFiSoldierController : MonoBehaviour
     void LateUpdate()
     {
         if(health > 0) {
-            GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text = "";
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
+            if (!isTraining) GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text = "";
+            if (!isTraining && GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
                 GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
                     "You won, Onii-chan~ \\(ᵔᵕᵔ)/";
                 GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().color =

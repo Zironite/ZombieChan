@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    bool menuVisible = true;
+    public static bool menuVisible = true;
     bool whoareweVisable = false;
-    bool gameStarted = false;
+    static bool gameStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +34,19 @@ public class MenuScript : MonoBehaviour
             {
                 menuVisible = false;
                 gameStarted = true;
+                SceneManager.LoadScene("BaseRoad", LoadSceneMode.Single);
             }
-
-            if (GUI.Button(new Rect(50, (Screen.height - 100 - 20) / 3 + 20, Screen.width - 200, (Screen.height - 100 - 20) / 3), "Restart Tutorial"))
+            string TutorialText;
+            if (gameStarted)
+                TutorialText = "Restart Tutorial";
+            else
+                TutorialText = "Start Tutorial";
+            if (GUI.Button(new Rect(50, (Screen.height - 100 - 20) / 3 + 20, Screen.width - 200, (Screen.height - 100 - 20) / 3), TutorialText))
             {
                 menuVisible = false;
                 gameStarted = true;
+                CheckPointScript.checkPoints = new List<GameObject>();
+                SceneManager.LoadScene("Training box", LoadSceneMode.Single);
             }
 
             if (GUI.Button(new Rect(50, (Screen.height - 100 - 20) * 2 / 3 + 19, Screen.width - 200, (Screen.height - 100 - 20) / 3), "Who are we?"))
