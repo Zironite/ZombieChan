@@ -12,6 +12,7 @@ TagManager:
   - CheckPoint
   - Destructible
   - Enemy
+  - EndGameText
   layers:
   - Default
   - TransparentFX
