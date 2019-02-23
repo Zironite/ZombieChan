@@ -19,6 +19,7 @@ public class ZombieBehaviour : MonoBehaviour
     private Transform[] points;
     private Transform[] shuffledPoints;
     private int nextDest;
+    private int lastPlayerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class ZombieBehaviour : MonoBehaviour
         points = GameObject.FindGameObjectsWithTag("PatrolPoint").Select(p => p.transform).ToArray();
         shuffledPoints = points.OrderBy(p => Random.Range(0,2) == 0).ToArray();
         nextDest = 0;
+        lastPlayerHealth = 100;
         zombieAnimator.SetBool("Attack", false);
         zombieAnimator.SetBool("Walk", true);
         zombieNavAgent.enabled = true;
@@ -41,26 +43,30 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (isAlive == true)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance)
+            if (player.GetComponent<SciFiSoldierController>().health > 0 && 
+                Vector3.Distance(transform.position, player.transform.position) <= attackDistance)
             {
                 zombieAnimator.SetBool("Attack", true);
                 zombieAnimator.SetBool("Walk", false);
                 zombieNavAgent.enabled = false;
             }
-            else if (Vector3.Distance(transform.position, player.transform.position) <= chaseDistance)
+            else if (player.GetComponent<SciFiSoldierController>().health > 0 && 
+                Vector3.Distance(transform.position, player.transform.position) <= chaseDistance)
             {
                 zombieAnimator.SetBool("Attack", false);
                 zombieAnimator.SetBool("Walk", true);
                 zombieNavAgent.enabled = true;
                 zombieNavAgent.SetDestination(player.transform.position);
             }
-            else if (!zombieNavAgent.pathPending && Vector3.Distance(transform.position, zombieNavAgent.destination) <= 1)
+            else if ((player.GetComponent<SciFiSoldierController>().health <= 0 && lastPlayerHealth > 0) || 
+                (!zombieNavAgent.pathPending && Vector3.Distance(transform.position, zombieNavAgent.destination) <= 1))
             {
                 zombieAnimator.SetBool("Attack", false);
                 zombieAnimator.SetBool("Walk", true);
                 zombieNavAgent.enabled = true;
                 GotToNextDestination();
             }
+            lastPlayerHealth = player.GetComponent<SciFiSoldierController>().health;
         }
         else
         {
