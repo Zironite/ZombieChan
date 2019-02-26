@@ -259,6 +259,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!1 &103252930
@@ -845,6 +855,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
@@ -1687,6 +1707,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
@@ -2763,6 +2793,8 @@ MonoBehaviour:
   spine: {fileID: 591413925}
   gunMuzzleFlash: {fileID: 1261222217}
   bullet: {fileID: 7296414749939214320, guid: 2efabd1550983f5a2b9c64f18a7ef493, type: 3}
+  health: 0
+  isTraining: 1
 --- !u!136 &1144373840
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3604,7 +3636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4413,6 +4445,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}
 --- !u!224 &2137179676 stripped
@@ -4544,6 +4586,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218106585540115007, guid: 2cf129e345e7c5c4b8e0ef41aad243ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf129e345e7c5c4b8e0ef41aad243ff, type: 3}

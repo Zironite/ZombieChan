@@ -7,7 +7,7 @@ public class CheckPointScript : MonoBehaviour
 {
     GameObject parent;
     public static List<GameObject> checkPoints = new List<GameObject>();
-    public static bool Mission3Passed = false;
+    public static bool SleepEnded = false;
     private Animator trainingAnimator;
     void Start()
     {
@@ -24,9 +24,9 @@ public class CheckPointScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             switch (parent.name)
             {
@@ -50,10 +50,10 @@ public class CheckPointScript : MonoBehaviour
                         .transform.Find("Canvas").gameObject.SetActive(false);
                     checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint4")
                         .transform.Find("CanvasFail").gameObject.SetActive(false);
-                    Mission3Passed = true;
+                    SleepEnded = true;
                     break;
                 case "CheckPoint4":
-                    if (Mission3Passed == false)
+                    if (SleepEnded == false)
                     {
                         checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint3").SetActive(true);
                         checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint4")
@@ -79,19 +79,11 @@ public class CheckPointScript : MonoBehaviour
                     break;
             }
         }
-        if (collision.gameObject.tag == "Bullet")
-        {
-            if (parent.name == "CheckPoint6")
-            {
-                checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint5").SetActive(false);
-                parent.transform.Find("Canvas").gameObject.SetActive(true);
-            }
-        }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             switch (parent.name)
             {
@@ -112,9 +104,28 @@ public class CheckPointScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            if (parent.name == "CheckPoint6")
+            {
+                checkPoints.Single<GameObject>(checkpoint => checkpoint.name == "CheckPoint5").SetActive(false);
+                parent.transform.Find("Canvas").gameObject.SetActive(true);
+                StartCoroutine(ShowMenu());
+            }
+        }
+    }
+
     private IEnumerator RunToCheckPoint4()
     {
         yield return new WaitForSeconds(3);
-        Mission3Passed = false;
+        SleepEnded = false;
+    }
+
+    private IEnumerator ShowMenu()
+    {
+        yield return new WaitForSeconds(3);
+        MenuScript.menuVisible = true;
     }
 }
