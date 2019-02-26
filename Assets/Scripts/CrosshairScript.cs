@@ -25,10 +25,19 @@ public class CrosshairScript : MonoBehaviour
                 100000*Camera.main.transform.forward);
         var rectTransform = (RectTransform) transform;
         rectTransform.position = new Vector3(screenPoint.x,screenPoint.y,0);
-        if (Physics.Raycast(gunMuzzleFlash.transform.position, Camera.main.transform.forward)) {
-            GetComponent<Image>().material.color = Color.Lerp(GetComponent<Image>().material.color,aimedOnEnemyColor,0.1f);
+        RaycastHit info;
+        if (Physics.Raycast(gunMuzzleFlash.transform.position, Camera.main.transform.forward, out info)) {
+            RaycastHit secondHitInfo;
+            
+            if(Physics.Raycast(gunMuzzleFlash.transform.position, Camera.main.transform.forward, out secondHitInfo, 
+                Mathf.Infinity, ~0)) {
+                if ((info.point - secondHitInfo.point).magnitude <= 1f) {
+                    GetComponent<Image>().material.color = 
+                        Color.Lerp(GetComponent<Image>().material.color,aimedOnEnemyColor,0.1f);
+                }
+            }
         } else {
-            GetComponent<Image>().material.color = Color.Lerp(GetComponent<Image>().material.color,defaultColor,0.1f);
+            GetComponent<Image>().material.color = Color.Lerp(GetComponent<Image>().material.color,defaultColor,0.5f);
         }
     }
 }

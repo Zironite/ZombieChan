@@ -85,6 +85,7 @@ public class ZombieBehaviour : MonoBehaviour
         {
             isAlive = false;
             GameObject.Destroy(collision.gameObject);
+            GetComponent<CapsuleCollider>().enabled = false;
             GameObject.Destroy(gameObject, 4);
         }
     }
