@@ -20,6 +20,11 @@ public class SciFiSoldierController : MonoBehaviour
     float lightIntensityTarget;
     public int health;
     public bool isTraining = false;
+
+    public AudioClip gunshotSound;
+    public AudioClip walkingSound;
+    private System.DateTime lastWalkSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,7 @@ public class SciFiSoldierController : MonoBehaviour
         isFiring = false;
         lightIntensityTarget = 3;
         health = 100;
+        lastWalkSound = System.DateTime.Now;
     }
 
     // Update is called once per frame
@@ -119,6 +125,12 @@ public class SciFiSoldierController : MonoBehaviour
                         resettingCameraPosition = true;
                         spineRotation = Quaternion.Euler(355.6f, 354.2f, 7.8f);
                     }
+                    if (moveForwardAmount > 0 && 
+                        animator.GetFloat("Speed") > 0 &&
+                        0.2f/animator.GetFloat("Speed") <= (System.DateTime.Now - lastWalkSound).Milliseconds/1000f) {
+                        lastWalkSound = System.DateTime.Now;
+                        AudioSource.PlayClipAtPoint(walkingSound, transform.position);
+                    }
                     GetComponent<Transform>().position += GetComponent<Transform>().forward*moveForwardAmount*
                         animator.GetFloat("Speed")*movementSpeed*Time.fixedDeltaTime;
                     GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
@@ -158,6 +170,7 @@ public class SciFiSoldierController : MonoBehaviour
     public IEnumerator ActivateMuzzleFlash() {
         var gunMuzzleLight = gunMuzzleFlash.GetComponent<Light>();
         lightIntensityTarget = Random.Range(3,10);
+        AudioSource.PlayClipAtPoint(gunshotSound,gunMuzzleFlash.transform.position);
         while (Mathf.Abs(gunMuzzleLight.intensity - lightIntensityTarget) > 0.001f) {
             // Debug.Log(gunMuzzleLight.intensity);
             FadeGunMuzzleFlash(lightIntensityTarget);

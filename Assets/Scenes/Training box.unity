@@ -1126,10 +1126,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TargetCross
       objectReference: {fileID: 0}
-    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 224597112092344012, guid: e79c6b4804dec6f4eb0125d2081d435f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1335,6 +1331,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
@@ -2795,6 +2795,8 @@ MonoBehaviour:
   bullet: {fileID: 7296414749939214320, guid: 2efabd1550983f5a2b9c64f18a7ef493, type: 3}
   health: 0
   isTraining: 1
+  gunshotSound: {fileID: 8300000, guid: f6cb1f581b7444b23a05b613a16420d5, type: 3}
+  walkingSound: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
 --- !u!136 &1144373840
 CapsuleCollider:
   m_ObjectHideFlags: 0

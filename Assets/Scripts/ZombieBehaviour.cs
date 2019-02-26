@@ -20,6 +20,8 @@ public class ZombieBehaviour : MonoBehaviour
     private Transform[] shuffledPoints;
     private int nextDest;
     private int lastPlayerHealth;
+    public AudioClip zombieGrowl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class ZombieBehaviour : MonoBehaviour
         zombieAnimator.SetBool("Walk", true);
         zombieNavAgent.enabled = true;
         GotToNextDestination();
+        InvokeRepeating("Growl", 0, 2f);
     }
 
     // Update is called once per frame
@@ -90,5 +93,11 @@ public class ZombieBehaviour : MonoBehaviour
         zombieNavAgent.SetDestination(shuffledPoints[nextDest].position);
         if(nextDest == shuffledPoints.Length - 1) nextDest = 0;
         else nextDest++;
+    }
+
+    private void Growl() {
+        if(Random.Range(0,1.0f) >= Random.Range(0,0.4f)) {
+            AudioSource.PlayClipAtPoint(zombieGrowl, transform.position, 0.2f);
+        }
     }
 }

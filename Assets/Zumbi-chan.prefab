@@ -843,6 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca23eab36d35164ca3d4d9e0ca16b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieGrowl: {fileID: 8300000, guid: 21f7381b3f27145af9623e46bc38567a, type: 3}
 --- !u!1 &8347897847691251703
 GameObject:
   m_ObjectHideFlags: 0
