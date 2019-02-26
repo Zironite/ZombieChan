@@ -1126,6 +1126,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TargetCross
       objectReference: {fileID: 0}
+    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 224597112092344012, guid: e79c6b4804dec6f4eb0125d2081d435f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1331,10 +1335,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1783451679219668, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79c6b4804dec6f4eb0125d2081d435f, type: 3}
@@ -3973,7 +3973,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8788154331271488159, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
 --- !u!1001 &1863422714
 PrefabInstance:
