@@ -1595,6 +1595,7 @@ GameObject:
   - component: {fileID: 9500000}
   - component: {fileID: 11400000}
   - component: {fileID: 11400002}
+  - component: {fileID: 8788154331271488159}
   m_Layer: 0
   m_Name: Sci-Fi_Soldier
   m_TagString: Untagged
@@ -1673,3 +1674,15 @@ MonoBehaviour:
     rightGun: {fileID: 100000, guid: d992a232642f7574b80a75c2ca4b4cb8, type: 3}
     leftGun: {fileID: 0}
     controller: {fileID: 9100000, guid: dffbd9326394a8d47a87a1e2aec70a59, type: 2}
+--- !u!114 &8788154331271488159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbb8fa6af682ae44a5ddb85fd5835f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
