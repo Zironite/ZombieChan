@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SciFiSoldierController : MonoBehaviour
@@ -24,6 +25,7 @@ public class SciFiSoldierController : MonoBehaviour
     public AudioClip gunshotSound;
     public AudioClip walkingSound;
     private System.DateTime lastWalkSound;
+    private static int level = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -47,11 +49,17 @@ public class SciFiSoldierController : MonoBehaviour
         if(health > 0) {
             if (!isTraining) GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text = "";
             if (!isTraining && GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
-                GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
+                if (level == 1)
+                    GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
                     "You won, Onii-chan~ \\(ᵔᵕᵔ)/";
+                if (level == 2)
+                    GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
+                    "You won, Onii-chan~ \\(ᵔᵕᵔ)/\nGame ended";
                 GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().color =
                     new Color(0, 0.3f, 0);
                 actions.Stay();
+                if (level == 1)
+                    StartCoroutine(NextScene());
             } else {
                 float moveForwardAmount = Input.GetAxis("Vertical");
                 float rotateAmount = Input.GetAxis("Horizontal");
@@ -198,5 +206,12 @@ public class SciFiSoldierController : MonoBehaviour
                     actions.Damage();
                     health -= 5;
                 }
+    }
+
+    private IEnumerator NextScene()
+    {
+        level++;
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("SpecialStage", LoadSceneMode.Single);
     }
 }
