@@ -95,6 +95,7 @@ public class MenuScript : MonoBehaviour
 
         // Player can move only if no menu is open
         gameObject.GetComponent<SciFiSoldierController>().enabled = !menuVisible && !whoareweVisable;
-        gameObject.GetComponent<Rigidbody>().useGravity = tutorialStarted || gameStarted;
+        gameObject.GetComponent<Rigidbody>().useGravity = (tutorialStarted || gameStarted) && 
+            gameObject.GetComponent<SciFiSoldierController>().health > 0;
     }
 }
