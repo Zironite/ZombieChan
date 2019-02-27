@@ -21,11 +21,14 @@ public class MenuScript : MonoBehaviour
         if (menuVisible == true)
         {
             // ---------- Menu Buttons ----------
-            GUI.BeginGroup(new Rect(50, 50, Screen.width - 100, Screen.height - 100));
+            GUI.BeginGroup(new Rect(50, 50, Screen.width - 80, Screen.height - 100));
 
-            GUI.Box(new Rect(50, 0, Screen.width - 200, Screen.height - 100), "Zumbi-chan");
-
-            if ((gameStarted == true || tutorialStarted == true) && GUI.Button(new Rect(Screen.width - 140, 0, 40, 40), "X"))
+            GUI.Box(new Rect(100, 0, Screen.width - 300, Screen.height - 100), "Zumbi-chan");
+            if (GUI.Button(new Rect(Screen.width - 190, 0, 100, 40), "Exit game"))
+            {
+                Application.Quit();
+            }
+            if ((gameStarted == true || tutorialStarted == true) && GUI.Button(new Rect(Screen.width - 190, 50, 100, 40), "Resume"))
             {
                 menuVisible = false;
                 whoareweVisable = false;
@@ -36,7 +39,7 @@ public class MenuScript : MonoBehaviour
                 gameText = "Restart Game";
             else
                 gameText = "New Game";
-            if (GUI.Button(new Rect(50, 20, Screen.width - 200, (Screen.height - 100 - 20) / 3), gameText))
+            if (GUI.Button(new Rect(100, 20, Screen.width - 300, (Screen.height - 100 - 20) / 3), gameText))
             {
                 menuVisible = false;
                 tutorialStarted = false;
@@ -49,7 +52,7 @@ public class MenuScript : MonoBehaviour
                 tutorialText = "Restart Tutorial";
             else
                 tutorialText = "Start Tutorial";
-            if (GUI.Button(new Rect(50, (Screen.height - 100 - 20) / 3 + 20, Screen.width - 200, (Screen.height - 100 - 20) / 3), tutorialText))
+            if (GUI.Button(new Rect(100, (Screen.height - 100 - 20) / 3 + 20, Screen.width - 300, (Screen.height - 100 - 20) / 3), tutorialText))
             {
                 menuVisible = false;
                 tutorialStarted = true;
@@ -58,7 +61,7 @@ public class MenuScript : MonoBehaviour
                 SceneManager.LoadScene("Training box", LoadSceneMode.Single);
             }
 
-            if (GUI.Button(new Rect(50, (Screen.height - 100 - 20) * 2 / 3 + 19, Screen.width - 200, (Screen.height - 100 - 20) / 3), "Who are we?"))
+            if (GUI.Button(new Rect(100, (Screen.height - 100 - 20) * 2 / 3 + 19, Screen.width - 300, (Screen.height - 100 - 19) / 3), "Who are we?"))
             {
                 menuVisible = false;
                 whoareweVisable = true;
