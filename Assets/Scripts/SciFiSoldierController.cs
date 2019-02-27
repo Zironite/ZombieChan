@@ -25,7 +25,6 @@ public class SciFiSoldierController : MonoBehaviour
     public AudioClip gunshotSound;
     public AudioClip walkingSound;
     private System.DateTime lastWalkSound;
-    private static int level = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -49,17 +48,16 @@ public class SciFiSoldierController : MonoBehaviour
         if(health > 0) {
             if (!isTraining) GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text = "";
             if (!isTraining && GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
-                if (level == 1)
+                if (SceneManager.GetActiveScene().buildIndex == 1)
                     GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
                     "You won, Onii-chan~ \\(ᵔᵕᵔ)/";
-                if (level == 2)
-                    GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
-                    "You won, Onii-chan~ \\(ᵔᵕᵔ)/\nGame ended";
+                if (SceneManager.GetActiveScene().buildIndex == 2)
+                    GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text = 
+                        "You won, Onii-chan~ \\(ᵔᵕᵔ)/\nGame ended";
                 GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().color =
                     new Color(0, 0.3f, 0);
                 actions.Stay();
-                if (level == 1)
-                    StartCoroutine(NextScene());
+                StartCoroutine(NextScene());
             } else {
                 float moveForwardAmount = Input.GetAxis("Vertical");
                 float rotateAmount = Input.GetAxis("Horizontal");
@@ -166,11 +164,12 @@ public class SciFiSoldierController : MonoBehaviour
         } else {
             if(!animator.GetCurrentAnimatorStateInfo (0).IsName ("Death"))
                 actions.Death();
-                GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
-                    "YOU DIED, Onii-chan~ ಥ_ಥ!";
-                Camera.main.transform.LookAt(transform, transform.forward);
-                GetComponent<CapsuleCollider>().enabled = false;
-                GetComponent<Rigidbody>().useGravity = false;
+            GameObject.FindGameObjectWithTag("EndGameText").GetComponent<Text>().text =
+                "YOU DIED, Onii-chan~ ಥ_ಥ!";
+            Camera.main.transform.LookAt(transform, transform.forward);
+            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<Rigidbody>().useGravity = false;
+            StartCoroutine(NextScene());
         }
         GameObject.FindGameObjectWithTag("HealthText").GetComponent<Text>().text = health.ToString();
     }
@@ -210,8 +209,10 @@ public class SciFiSoldierController : MonoBehaviour
 
     private IEnumerator NextScene()
     {
-        level++;
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("SpecialStage", LoadSceneMode.Single);
+        if (health > 0 && SceneManager.GetActiveScene().buildIndex == 1)
+            SceneManager.LoadScene("SpecialStage", LoadSceneMode.Single);
+        else
+            MenuScript.menuVisible = true;
     }
 }
