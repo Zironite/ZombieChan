@@ -8,7 +8,7 @@ public class ZombieBehaviour : MonoBehaviour
 {
     // Variables
     private float attackDistance = 0.7f;
-    private float chaseDistance = 10f;
+    public float chaseDistance = 10f;
     private bool isAlive= true;
 
     // Components

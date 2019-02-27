@@ -104,7 +104,7 @@ public class SciFiSoldierController : MonoBehaviour
                     actions.Sitting();
                 }
 
-                if(Input.GetMouseButton(1)) {
+                if(Input.GetMouseButton(1) && moveForwardAmount == 0) {
                     actions.Aiming();
                     GetComponent<Transform>().RotateAround(GetComponent<Transform>().position,Vector3.up,
                         mouseMoveAmountX*Time.fixedDeltaTime*movementSpeed*10);
